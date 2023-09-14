@@ -18,11 +18,7 @@ parser.add_argument('--surrogate_dataset',default='cifar10',type=str)
 parser.add_argument('--topk',default=512,type = int)
 parser.add_argument('--round_size',default=0,type = int)
 args = parser.parse_args()
-
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-
 target_encoder,target_linear = load_target_model(args.model_type,args.encoder_dataset,args.classifier_dataset)
 if(args.classifier_dataset == 'cifar100'):
     num = 100
