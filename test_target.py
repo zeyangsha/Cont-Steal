@@ -19,5 +19,4 @@ def test_for_target(target_encoder,target_linear,test_loader):
         y = y.cpu().numpy()
         y = list(y)
         total_sample.extend(y)
-
     print(accuracy_score(total_sample, accuracy_sample))
