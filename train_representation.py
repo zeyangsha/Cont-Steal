@@ -53,12 +53,9 @@ def train_represnetation_linear(model,target_encoder,train_loader,criterion,opti
         total_sample.extend(y)
         loss.backward()
         optimizer.step()
-
         loss_epoch += loss.item()
-
         target_linear.eval()
         target_encoder.eval()
-
         t_output = target_linear(target_encoder(x))
         t_predicted = t_output.argmax(1)
         t_predicted = t_predicted.cpu().numpy()
