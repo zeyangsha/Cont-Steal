@@ -28,11 +28,9 @@ def main():
     parser.add_argument('--pretrain',default='cifar10',type=str)
     parser.add_argument('--target_dataset',default='cifar10',type=str)
     parser.add_argument('--surrogate_dataset',default='cifar10',type=str)
-    parser.add_argument('--steal',default='contrastive',type=str)
     parser.add_argument('--augmentation',default=2,type=int)
     parser.add_argument('--surrogate_model',default='resnet18',type=str)
-    parser.add_argument('--split',default= 1,type= float )
-    parser.add_argument('--epoch',default= 1, type = int)
+    parser.add_argument('--epoch',default= 100, type = int)
 
 
     args = parser.parse_args()
