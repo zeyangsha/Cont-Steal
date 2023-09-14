@@ -16,30 +16,23 @@ def train_posterior(target_encoder,target_linear,surrogate_model,train_loader,cr
         target_linear.requires_grad = False
         x = x.cuda()
         y = y.cuda()
-
         re = target_encoder(x)
         output = target_linear(re)
-
         su_output = surrogate_model(x)
         su_re = surrogate_model.encoder(x)
-
         mse = F.mse_loss(su_re,re)
         mse_epoch += mse.item()
-
         loss = criterion(su_output,output)
         loss.backward()
         optimizer.step()
-
         ta_predicted = output.argmax(1)
         ta_predicted = ta_predicted.cpu().numpy()
         ta_predicted = list(ta_predicted)
         target_sample.extend(ta_predicted)
-
         su_output = su_output.argmax(1)
         su_output = su_output.cpu().numpy()
         su_output = list(su_output)
         surrogate_sample.extend(su_output)
-
         y = y.cpu().numpy()
         y = list(y)
         true_sample.extend(y)
