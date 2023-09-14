@@ -34,8 +34,6 @@ def test_onehot(target_encoder,target_linear,surrogate_model,test_loader):
         su_output = su_output.cpu().numpy()
         su_output = list(su_output)
         surrogate_sample.extend(su_output)
-
-
         y = y.cpu().numpy()
         y = list(y)
         true_sample.extend(y)
