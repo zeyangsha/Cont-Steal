@@ -42,7 +42,6 @@ def main():
         shuffle=True,
         drop_last=True,
     )
-
     test_loader = torch.utils.data.DataLoader(
         test_dataset,
         batch_size=128,
