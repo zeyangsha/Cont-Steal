@@ -31,7 +31,7 @@ def main():
     parser.add_argument('--steal',default='posterior',type=str)
     parser.add_argument('--surrogate_model',default='resnet18',type=str)
     parser.add_argument('--split',default= 1,type= float )
-    parser.add_argument('--epoch',default= 1, type = int)
+    parser.add_argument('--epoch',default= 100, type = int)
 
 
     args = parser.parse_args()
