@@ -13,7 +13,6 @@ from torch.utils.data import random_split
 
 
 class random_transform():
-
     def __init__(self,size):
         self.transform = torchvision.transforms.Compose(
             [
