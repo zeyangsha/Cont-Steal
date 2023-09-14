@@ -9,7 +9,6 @@ from PIL import Image
 from torchvision.datasets.utils import check_integrity, download_and_extract_archive
 from torchvision.datasets.vision import VisionDataset
 
-
 class CIFAR10(VisionDataset):
     """`CIFAR10 <https://www.cs.toronto.edu/~kriz/cifar.html>`_ Dataset.
     Args:
